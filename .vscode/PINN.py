@@ -14,7 +14,7 @@ v0 = 10.0      # initial velocity
 
 # True (analytical) solution h(t) = h0 + v0*t - 0.5*g*t^2
 def true_solution(t):
-    return h0 + v0*t - 0.5*g*(t**2)
+    return h0 + v0*t - 0.5*g*(t**2) 
 
 # Generate some time points
 t_min, t_max = 0.0, 2.0
