@@ -43,7 +43,7 @@ class PINN(nn.Module):
             nn.Tanh(),
             nn.Linear(n_hidden, n_hidden),
             nn.Tanh(),
-            nn.Linear(n_hidden, 1)
+            nn.Linear(n_hidden, 1) 
         )
 
     def forward(self, t):
@@ -117,8 +117,8 @@ optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
 
 # Hyperparameters for weighting the loss terms
 lambda_data = 2.0
-lambda_ode  = 2.0
-lambda_ic   = 2.0
+lambda_ode  = 0.0
+lambda_ic   = 0.0
 
 # For logging
 num_epochs = 4000
