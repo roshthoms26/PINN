@@ -1,8 +1,6 @@
 ## Overview
 
-The related document is https://www.vizuaranewsletter.com/p/teach-your-neural-network-to-respect?utm_campaign=post&utm_medium=web.
-
-The Core idea of this is that one can imagine teaching a child what will happen if they drop a ball. They don't need to see a thousand videos to learn that it will fall, not float up. However, in the case of an Artificial Intelligence (AI) model, it would need to analyze millions of pictures and videos of falling objects, and even after that, it is prone to making mistakes. It learns from patterns in data, but doesn't understand the fundamental rules of our world. This central problem is that standard neural networks are excellent pattern recognizers, but are ignorant of the basic laws of physics, which is where the application of PINN, or Physics-Informed Neural Network, comes in. The goal is to "teach" AI models to respect the laws of physics, making them more accurate, efficient, and trustworthy, especially for scientific and engineering tasks.
+The Core idea is that one can imagine teaching a child what will happen if they drop a ball. They don't need to see a thousand videos to learn that it will fall, not float up. However, in the case of an Artificial Intelligence (AI) model, it would need to analyze millions of pictures and videos of falling objects, and even after that, it is prone to making mistakes. It learns from patterns in data, but doesn't understand the fundamental rules of our world. This central problem is that standard neural networks are excellent pattern recognizers, but are ignorant of the basic laws of physics, which is where the application of PINN, or Physics-Informed Neural Network, comes in. The goal is to "teach" AI models to respect the laws of physics, making them more accurate, efficient, and trustworthy, especially for scientific and engineering tasks.
 
 Traditional AI has two major weaknesses when applied to real-world scientific problems. One of them is Data hunger, which is that training an AI model to simulate a complex system requires a large amount of high-quality data. This is often expensive, time-consuming, or sometimes impossible to collect. For example, we can't run a million crash tests to get data for a car safety AI. The other issue is that the models only understand statistical correlations in data; they can produce results that are completely impossible in the real world. These "unphysical" results make them unreliable for critical applications. Hence, we can argue that we can't rely on data alone. We need to infuse our models with the centuries of scientific knowledge we already possess.
 
@@ -10,6 +8,9 @@ Therefore, teaching a Neural network to "respect" physics can be done in two way
 > Data score: This is a traditional method. We give the AI some real-world data and penalize it when its predictions don't match the experimental data.
 
 > The Physics Score: This is the new method. We give the AI the known physics equations that govern the system( like the laws of motion or fluid dynamics) during training, and the AI is also penalized whenever its prediction violates a fundamental equation.
+
+A related document is https://www.vizuaranewsletter.com/p/teach-your-neural-network-to-respect?utm_campaign=post&utm_medium=web.
+
 
 ## Example
 
@@ -79,6 +80,19 @@ When all the loss functions are set to check the PINN case
 <img width="1000" height="500" alt="image" src="https://github.com/user-attachments/assets/70716b18-f5f5-40ea-9bdf-61913a99bee4" />
 The related graph is 
 <img width="800" height="500" alt="Figure_2" src="https://github.com/user-attachments/assets/ed727796-9692-457b-8ba0-9f115e29fcd9" />
+
+## Mechanical Aspects
+The mechanical side of PINNs integrates the laws of continuum mechanics into neural networks to understand complex physical systems. By using equations from Equilibrium equations, material laws and Boundary conditions, PINNs can predict displacements, stress and strain field etc. Hence PINNs are applied to problems in solid mechanics, structural analysis and material behaviour, where they learn and enforce the fundamental laws governing forces, deformation and motion.
+
+> Governing Equations in mechanics: In mechanics, The PDEs that describe equilibrium and motion such as ∇·σ + f = 0, where σ is the stress tensor and f represents body forces. The relationship between strain and displacement is defined as: ε = ½(∇u + ∇uᵀ), and the constitutive relation (Hooke’s law) links stress and strain: σ = C : ε, where C is the stiffness tensor. This can be embedded in PINNs loss function.
+
+> Boundary Conditions and constraints: These systems are governed by boundary conditions (loads, supports, fixed displacements) and Initial conditions too and these can be added to PINNs Loss function.
+
+> 	PINNs can also learn complex material behaviours such as nonlinear elasticity, plasticity etc.
+
+> Inverse and Dynamic mechanics: PINNs can be used to learn from Observed data (e.g. Displacements) to infer unknown parameters such as internal stresses, defect locations ect. Also for time-dependent mechanical systems, PINNs can solve equations of motion like ρ ∂²u/∂t² = ∇·σ + f, covering vibrations, impacts, and wave propagation.
+
+<img width="700" height="250" alt="image" src="https://github.com/user-attachments/assets/c93d13d4-0b78-4bbb-8d91-e805b2e3f072" />
 
 ## Conclusion
 
