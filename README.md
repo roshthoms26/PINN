@@ -1,4 +1,4 @@
-Overview
+## Overview
 
 The related document is https://www.vizuaranewsletter.com/p/teach-your-neural-network-to-respect?utm_campaign=post&utm_medium=web.
 
@@ -11,7 +11,7 @@ Therefore, teaching a Neural network to "respect" physics can be done in two way
 
 > The Physics Score: This is the new method. We give the AI the known physics equations that govern the system( like the laws of motion or fluid dynamics) during training, and the AI is also penalized whenever its prediction violates a fundamental equation.
 
-Example
+## Example
 
 Here, in this example https://www.youtube.com/watch?v=1AyAia_NZhQ, we consider a hypothetical set of experiments. We throw a ball up at a certain angle and note down the height of the ball at different points in time. Then we train a neural network on this dataset so that we can predict the height of the ball even at time points where we don't know.
 Hence, when we plot Height vs Time, we get
@@ -35,7 +35,7 @@ Hence, we bring Physics into the picture in this case, by adding Newton's laws o
 <img width="500" height="475" alt="image" src="https://github.com/user-attachments/assets/24832813-f697-4ae1-b3f2-b062ac1e78e8" />
 
 Hence, we can implement PINN into our example. Hence, when a ball is thrown up, its trajectory varies according to the following Ordinary Differential Equation(ODE) 
-dh/dt = u₀ - gt
+**dh/dt = u₀ - gt**
 Where:
 • dh/dt = Rate of change of height with respect to time (velocity)
 • u₀ = Initial velocity
@@ -58,6 +58,8 @@ Hence, the Combined Loss Function is
 
 <img width="750" height="225" alt="image" src="https://github.com/user-attachments/assets/78a53e0a-079b-488a-98a8-7fb086d5c12c" />
 
+## Results & Outcomes
+
 The different cases where lambda is set:
 
 Case 1:
@@ -78,6 +80,6 @@ When all the loss functions are set to check the PINN case
 The related graph is 
 <img width="800" height="500" alt="Figure_2" src="https://github.com/user-attachments/assets/ed727796-9692-457b-8ba0-9f115e29fcd9" />
 
-Conclusion
+## Conclusion
 
 The potential of PINNs is indeed undeniable, but they can be computationally complex and sometimes tricky to train stably. Choosing the right physics laws to enforce is also crucial. They can represent a fundamental shift in how we build AI. Instead of creating pure models that learn only from data, we are moving towards AI partners that integrate our human scientific knowledge. This creates models that are More data-efficient, interpretable, robust, and reliable.
